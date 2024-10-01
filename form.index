@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Melamar Kerja</title>
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://i.postimg.cc/cCpG4nqd/Whats-App-Image-2024-10-01-at-19-13-21-abe375de.jpg);
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(50%);
+            background-color: #232323;
+        }
+
+
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main h1, main h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding-right: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column:first-child {
+            margin-right: 30px;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2d3665;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #232323;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Form Melamar Kerja: Tahap 1</h1>
+        <h2>Perusahaan SE Tech</h2>
+        <form id="survey-form">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Usia:</label>
+            <input type="number" id="age" name="age" min="1" max="150" required>
+
+            <!-- Tempat dan Tanggal Lahir di Row yang Sama -->
+            <div class="row">
+                <div class="column">
+                    <label for="birthplace">Tempat Lahir:</label>
+                    <input type="text" id="birthplace" name="birthplace" required>
+                </div>
+                <div class="column">
+                    <label for="birthdate">Tanggal Lahir:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+            </div>            
+
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender">
+                <option value="female">Perempuan</option>
+                <option value="male">Laki-laki</option>
+            </select>
+
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="degree">Pendidikan Terakhir:</label>
+            <select id="degree" name="degree">
+                <option value="sd">SD</option>
+                <option value="smp">SMP</option>
+                <option value="sma">SMA</option>
+                <option value="diploma">Diploma</option>
+                <option value="s1">S1</option>
+                <option value="s2">S2</option>
+                <option value="s3">S3</option>
+            </select>
+
+            <label for="last_studied_at">Nama Tempat Mendapatkan Pendidikan Terakhir:</label>
+            <input type="text" id="last_studied_at" name="last_studied_at" required>
+
+            <fieldset>
+                <legend>Posisi Kerja yang Diinginkan:</legend>
+                <input type="checkbox" id="frontenddev" name="services" value="frontenddev">
+                <label for="frontenddev">Front-End Developer</label><br>
+                <input type="checkbox" id="backenddev" name="services" value="backenddev">
+                <label for="backenddev">Back-End Developer</label><br>
+                <input type="checkbox" id="uiuxdes" name="services" value="uiuxdes">
+                <label for="uiuxdes">UI/UX Designer</label><br>
+                <input type="checkbox" id="fullstackdev" name="services" value="fullstackdev">
+                <label for="fullstackdev">Full-Stack Developer</label>
+            </fieldset>
+
+            <label for="resume">Tentang Diri:</label>
+            <small>Jelaskan tentang diri Anda dan mengapa Anda layak bekerja di perusahaan kami.</small>
+            <textarea id="resume" name="resume" rows="10" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </main>
+</body>
+</html>
